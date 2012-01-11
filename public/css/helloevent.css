@@ -1,0 +1,33 @@
+body {background: #ccc; font-family: "Trebuchet MS", sans-serif; font-size: 14px;}
+.Zebra_Form .cell { float: left; margin-right: 30px }
+.green_style { color: green; }
+.blue_style { color: blue; }
+.titre_confirm { color: green;padding-bottom: 10px; font-size: 18px; }
+.petit { font-size: 11px; }
+.titre_bleu_18 { color: black; font-size: 18px; }
+.titre_bleu_16 { color: black; font-size: 16px; }
+#titre { font-size: 24px; text-align: center; color: black; }
+#logo { text-align: center; margin-top: 10px;}            
+#global {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 25px;
+    padding-top: 0;
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+#global .Zebra_Form table { width: 100%; }
+#global #success {
+    margin: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border: 2px solid #green;
+    color: green;
+    font-size: 1.2em;
+    text-align: center;
+}

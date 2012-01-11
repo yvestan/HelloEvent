@@ -1,0 +1,10 @@
+{__(firstname)__} {__(lastname)__},
+
+Votre inscriptional a bien &eacute;t&eacute; prise en compte.
+
+Votre code d'inscription est {__(token_subscribe)__}.
+Vous trouverez en pi&egrave;ce jointe votre badge d'acc&egrave;s au format PDF &agrave; imprimer.
+
+Nous restons &agrave; votre disposition pour tous renseignements.
+
+Cordialement,
