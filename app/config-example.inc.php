@@ -81,7 +81,7 @@ $GLOBALS['he_fields'] = array(
     'birth_date' => array('active' => false),
     'zip_code' => array('active' => false),
     'city' => array('active' => false),
-    'country' => array('active' => false),
+    'id_country' => array('active' => false),
     'business_company' => array('active' => false),
     'business_function' => array('active' => false),
     'business_mobile' => array('active' => false),
