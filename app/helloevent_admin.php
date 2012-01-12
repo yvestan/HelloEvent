@@ -16,6 +16,16 @@
 // configuration
 include dirname(__FILE__).'/config.inc.php';
 
+// security check
+if(HE_ADMIN_PASS=='WARNING_CHANGE_THIS') {
+    echo "You should change HE_ADMIN_PASS on configuration file";
+    exit;
+}
+if(HE_AUTHKEY=='WARNING_CHANGE_THIS') {
+    echo "You should change HE_AUTHKEY on configuration file";
+    exit;
+}
+
 // où est l'app
 if(!defined('HE_APP_PATH')) {
     define('HE_APP_PATH', dirname(__FILE__));

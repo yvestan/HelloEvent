@@ -19,6 +19,16 @@ session_start();
 // configuration
 include dirname(__FILE__).'/config.inc.php';
 
+// security check
+if(HE_ADMIN_PASS=='WARNING_CHANGE_THIS') {
+    echo "You should change HE_ADMIN_PASS on configuration file";
+    exit;
+}
+if(HE_AUTHKEY=='WARNING_CHANGE_THIS') {
+    echo "You should change HE_AUTHKEY on configuration file";
+    exit;
+}
+
 // où est l'app
 if(!defined('HE_APP_PATH')) {
     define('HE_APP_PATH', dirname(__FILE__));
@@ -65,10 +75,18 @@ $subscribe = new Subscribe($pdo);
 
 // generate fields
 foreach($GLOBALS['he_fields'] as $f=>$v) {
-    if($v!==false) {
+    if($v['active']!==false) {
         // type
         $form->add('label', 'label_'.$f, $f, Grafomatic::__($f));
-        $obj = $form->add('text', $f, '');
+        // type de champs => text par défaut
+        if(empty($v['type'])) {
+            $v['type'] = 'text';
+        }
+        $obj = $form->add($v['type'], $f, '');
+        // pour un select TODO
+        /*if($v['type']=='select')) {
+            $obj->add_options(array());
+        }*/
         // controls rules
         if(!empty($v['controls'])) {
             foreach($v['controls'] as $c=>$cv) {

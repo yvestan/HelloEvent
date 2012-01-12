@@ -43,7 +43,7 @@
         <h2 class="titre_bleu_16">Complétez les informations suivantes</h2>
         <p style="font-style: italic;">Les questions précisées par <span style="font-weight: bold;color: red;">*</span> sont obligatoires</p>
 
-        <?php $form->render('*horizontal'); ?>
+        <?php $form->render(HE_FORM); ?>
 
     <?php endif; ?>
 

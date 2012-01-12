@@ -113,6 +113,10 @@ define('HE_RESTRICT_EMAIL', false);
 // application path / chemin vers l'application
 //define('HE_APP_PATH', '/your/path/app');
 
+// your form / votre formulaire
+// see : http://stefangabos.ro/wp-content/demos/Zebra_Form/
+define('HE_FORM', '*horizontal');
+
 // templates path / chemin vers le répertoire de templates
 //define('HE_APP_PATH', '/your/path/app/templates/');
 
