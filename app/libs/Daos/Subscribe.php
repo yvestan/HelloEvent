@@ -73,5 +73,39 @@ class Subscribe extends Grafomatic {
 
      // }}}
 
+    //  {{{ setActive()
+
+    /** activer/desactiver l'utilisateur
+     *
+     * @access public
+     * @param int $id_subscribe Identifiant de l'utilisateur
+     * @param int $active O ou 1
+     * @return bool
+     */
+     public function setActive($id_subscribe,$active=0)
+     {
+
+        // mettre à jour la date_active ou inactive
+        if($active==1) {
+            $field = 'active';
+        } else {
+            $field = 'inactive';
+        }
+
+        $this->setUpdateFields(array(
+            'active' => (int)$active,
+            'date_'.$field => date('Y-m-d H:i:s'),
+        ));
+
+        if($this->setData($id_subscribe)) {
+            return true;
+        } else {
+            return false;
+        }
+
+     }
+
+     // }}}
+
 }
 ?>

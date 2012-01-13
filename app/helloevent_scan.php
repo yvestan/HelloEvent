@@ -234,7 +234,7 @@ class HelloEvent_Check {
         if($subscriber = $this->checkSubscriberByCode()) {
             foreach($subscriber as $k=>$v) {
                 if(in_array($k, $this->return_fields) && $v!=null && $v!='') {
-                    $subscriber_tabs[$k] = $v;
+                    $subscriber_tabs[Grafomatic::__($k)] = $v;
                 }
             }
             return array(

@@ -13,9 +13,9 @@
     <body>
     <div id="global">
 
-    <?php if(defined('LOGO_HEAD')): ?>
+    <?php if(defined('HE_LOGO_HEAD')): ?>
     <div id="logo">
-        <img src="<?php echo LOGO_HEAD?>" alt="<?php echo ALT_LOGO_HEAD?>" />
+        <img src="<?php echo HE_LOGO_HEAD?>" alt="<?php echo HE_ALT_LOGO_HEAD?>" />
     </div>
     <?php endif; ?>
 
@@ -46,6 +46,8 @@
         <?php $form->render(HE_FORM); ?>
 
     <?php endif; ?>
+
+    <div class="footer"><a href="http://helloscan.mobi">HelloEvent by HelloScan</a> &amp; <a href="http://www.grafactory.net">grafactory.net</a></div>
 
     </div>
     </body>

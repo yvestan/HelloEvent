@@ -46,11 +46,13 @@ $GLOBALS['translate_config'] = array(
     'date_insert' => 'Date d\'ajout',
     'date_update' => 'Date de mise à jour',
     'token_subscribe' => 'Code',
-    'active' => 'Actif',
+    'active' => 'Actif/inactif',
     'subject_mail' => 'Votre inscription',
     'subject_mail_admin' => 'Nouvelle inscription',
     'btn_scan' => 'Scanner',
     'btn_valid' => 'Valider',
     'authkey_error' => 'Erreur d\'authentification',
+    'date_active' => 'Date d\'activation',
+    'date_inactive' => 'Date de désactivation',
 );
 ?>

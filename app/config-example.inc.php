@@ -105,8 +105,8 @@ define('HE_LOCALE', 'french');
 define('HE_RESTRICT_EMAIL', false);
 
 // logo and alternative text / logo et texte alternatif
-//define('HE_LOGO_HEAD', '');
-//define('HE_ALT_LOGO_HEAD', '');
+//define('HE_LOGO_HEAD', 'public/helloevent.png');
+//define('HE_ALT_LOGO_HEAD', 'HelloEvent by HelloScan');
 
 // optionnal / optionel
 

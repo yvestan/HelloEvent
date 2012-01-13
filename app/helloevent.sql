@@ -292,6 +292,7 @@ CREATE TABLE IF NOT EXISTS `helloevent_subscribe` (
   `token_subscribe` varchar(250) DEFAULT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '0',
   `date_active` timestamp NULL DEFAULT NULL,
+  `date_inactive` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id_subscribe`),
   KEY `token_subscribe` (`token_subscribe`),
   KEY `email` (`email`),

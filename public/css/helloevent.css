@@ -31,3 +31,11 @@ body {background: #ccc; font-family: "Trebuchet MS", sans-serif; font-size: 14px
     font-size: 1.2em;
     text-align: center;
 }
+#global .footer {
+    font-size: 11px;
+    margin-top: 20px;
+    color: #bbb;
+}
+#global .footer a {
+    color: #bbb;
+}
