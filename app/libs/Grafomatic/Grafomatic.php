@@ -161,14 +161,14 @@ class Grafomatic {
         }
 
         // résultat
-        $result = $sth->fetchAll();
+        $result = $sth->fetch(PDO::FETCH_ASSOC);
 
         if (!$result) {
             echo "\nPDO::errorInfo():\n";
             print_r($dbh->errorInfo());
             exit;
         } else {
-            $this->r = $result[0];
+            $this->r = $result;
         }
 
         return $this->r;
