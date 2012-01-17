@@ -1,5 +1,18 @@
 <?php
 
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4 ff=unix fenc=utf8: */
+
+/**
+ *
+ * Config file
+ *
+ * @package   HelloEvent
+ * @author    Yves Tannier [grafactory.net]
+ * @copyright 2011 Yves Tannier
+ * @link      http://www.grafactory.net/helloevent/ and http://helloscan.mobi
+ * @license   http://fr.wikipedia.org/wiki/Licence_MIT MIT Licence
+*/
+
 // copy address / copie de l'inscription (laissez vide pour ne pas la recevoir)
 define('HE_MAIL_ADMIN', 'me@example.tld');
 

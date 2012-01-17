@@ -9,7 +9,7 @@
  * @package   HelloEvent
  * @author    Yves Tannier [grafactory.net]
  * @copyright 2011 Yves Tannier
- * @link      http://www.grafactory.net/helloevent/
+ * @link      http://www.grafactory.net/helloevent/ and http://helloscan.mobi
  * @license   http://fr.wikipedia.org/wiki/Licence_MIT MIT Licence
 */
 
@@ -144,7 +144,16 @@ if ($form->validate()) {
     // instancie swiftmailer
     require HE_APP_PATH.'/libs/Swiftmailer/swift_required.php';
 
-    $transport = Swift_MailTransport::newInstance();
+    // le transport proposé
+    if(file_exists(HE_APP_PATH.'/transport.inc.php')) {
+        include HE_APP_PATH.'/transport.inc.php';
+    }
+
+    // si aucun transport
+    if(empty($transport)) {
+        $transport = Swift_MailTransport::newInstance();
+    }
+
     $mailer = Swift_Mailer::newInstance($transport);
 
     $rtl = "\n";
