@@ -45,7 +45,7 @@ if(!defined('HE_TPL_PATH')) {
 // generate qrcode
 if(!empty($_GET['get_qrcode'])) {
     include HE_APP_PATH.'/libs/phpqrcode/qrlib.php';
-    QRcode::png(filter_var($_GET['get_qrcode'], FILTER_SANITIZE_STRING));
+    QRcode::png(filter_var($_GET['get_qrcode'], FILTER_SANITIZE_STRING), false, 'H', 4, 1);
     exit;
 }
 
