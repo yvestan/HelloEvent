@@ -1,2 +1,2 @@
-app/config.inc.php
+app/config/config.inc.php
 app/libs/phpqrcode/cache/
