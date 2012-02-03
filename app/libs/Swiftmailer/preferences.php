@@ -18,6 +18,6 @@ Swift_Preferences::getInstance()->setCharset('utf-8');
     -> setTempDir(sys_get_temp_dir())
     -> setCacheType('disk');
 }*/
-Swift_Preferences::getInstance()->setTempDir('/home/grafactory/www/fjtlesoiseaux.fr/tmp/')->setCacheType('disk');
+//Swift_Preferences::getInstance()->setTempDir('/tmp/')->setCacheType('disk');
 
 Swift_Preferences::getInstance()->setQPDotEscape(false);

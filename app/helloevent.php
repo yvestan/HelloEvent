@@ -13,6 +13,15 @@
  * @license   http://fr.wikipedia.org/wiki/Licence_MIT MIT Licence
 */
 
+// debug on/off
+define('HE_DEBUG', false);
+
+// debug
+if(HE_DEBUG) {
+    error_reporting(E_ALL);
+    ini_set('display_errors', true);
+}
+
 // start session // démarrer la session
 session_start();
 
@@ -161,6 +170,11 @@ if ($form->validate()) {
 
     $mailer = Swift_Mailer::newInstance($transport);
 
+    if(HE_DEBUG) {
+        $logger = new Swift_Plugins_Loggers_EchoLogger();
+        $mailer->registerPlugin(new Swift_Plugins_LoggerPlugin($logger));
+    }
+
     $rtl = "\n";
 
     // message au format HTML
@@ -234,10 +248,16 @@ if ($form->validate()) {
     $message_admin->attach($attachment);
 
     // envoyer le message
-    if($result = $mailer->send($message) && $result_admin = $mailer->send($message_admin)) {
+    if($mailer->send($message)) {
         $success_form = true;
     } else {
         $error_form = true;
+    }
+
+    $mailer->send($message_admin);
+
+    if(HE_DEBUG) {
+        echo $logger->dump();
     }
 
 }
