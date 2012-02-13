@@ -51,6 +51,7 @@ $GLOBALS['translate_config'] = array(
     'subject_mail_admin' => 'Nouvelle inscription',
     'btn_scan' => 'Scanner',
     'btn_valid' => 'Valider',
+    'btn_invalid' => 'Invalider',
     'authkey_error' => 'Erreur d\'authentification',
     'date_active' => 'Date d\'activation',
     'date_inactive' => 'Date de désactivation',
