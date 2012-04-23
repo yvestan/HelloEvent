@@ -14,7 +14,12 @@
 */
 
 // configuration
-include dirname(__FILE__).'/config.inc.php';
+if(!file_exists(dirname(__FILE__).'/config/config.inc.php')) {
+    echo 'Impossible de trouver le fichier de configuration / Unable to find configuration file';
+    exit;
+} else {
+    include dirname(__FILE__).'/config/config.inc.php';
+}
 
 // où est l'app
 if(!defined('HE_APP_PATH')) {

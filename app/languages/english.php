@@ -51,7 +51,6 @@ $GLOBALS['translate_config'] = array(
     'subject_mail_admin' => 'Nouvelle inscription',
     'btn_scan' => 'Scanner',
     'btn_valid' => 'Valider',
-    'btn_invalid' => 'Invalider',
     'authkey_error' => 'Erreur d\'authentification',
     'date_active' => 'Date d\'activation',
     'date_inactive' => 'Date de désactivation',
@@ -66,22 +65,22 @@ $GLOBALS['translate_config'] = array(
     'he_mail_from' => 'E-mail de l\'expéditeur des inscriptions que recevront les inscrits',
     'he_mail_from_name' => 'Nom de l\'expéditeur des inscriptions que recevront les inscrits',
     'save_config' => 'Sauvegarder la configuration',
-    'write_file' => 'Il y a déjà un fichier de configuration. Vous devez modifier les valeurs à la main sur app/config/config.inc.php',
-    'write_file_no' => 'Impossible d\'écrire dans le fichier de configuration. Vous devez changer les droits sur app/config/',
-    'old_php' => 'La version de PHP est trop ancienne (PHP5 requis)',
-    'php_ok' => 'La version de PHP est correcte',
-    'no_pdo' => 'Vous devez disposez de l\'extension PDO pour PHP',
-    'pdo_ok' => 'L\'extension PDO est installée',
-    'success_connect_db' => 'La connexion à la base de données s\'est bien déroulée',
-    'error_db' => 'Impossible de se connecter à la base de données. Erreur : ',
-    'create_sql' => 'Les tables SQL ont été ajoutée',
-    'create_sql_no' => 'Erreur pendant la création des tables SQL. Erreur : ',
-    'error_configuration' => 'Il y a eu un problème pendant la configuration',
-    'configuration_install' => 'Complétez les informations suivantes',
-    'required_fields' => 'Les champs précisées par <span style="font-weight: bold;color: red;">*</span> sont obligatoires',
-    'configure_ok' => '<p>Votre configuration a bien été prise en compte.<br /><br />Vous pouvez : <a href="../">testez l\'inscription</a> 
-            et <a href="http://helloscan.mobi/helloevent.html">configurez HelloScan</a> ou encore, découvrir la 
-            <a href="../admin/">base de données des inscriptions</a> qui doit-être vide pour l\'instant.</p>
-            <p>Pour configurez les champs qui s\'affichent, vous devez directement éditer le fichier app/config/config.inc.php</p>',
+    'write_file' => 'Configuration applied. You should manually change app/config/config.inc.php',
+    'write_file_no' => 'Unable to write config file. You need to change write on app/config/',
+    'old_php' => 'PHP version is too old.',
+    'php_ok' => 'PHP version OK',
+    'no_pdo' => 'You need PDO extension for PHP',
+    'pdo_ok' => 'PDO extension is installed',
+    'success_connect_db' => 'Database connection OK',
+    'error_db' => 'Unable to connect database. Erreur : '.$e->getMessage(),
+    'create_sql' => 'SQL tables OK',
+    'create_sql_no' => 'SQL Error during SQL tables creation. Erreur : '.$e->getMessage(),
+    'error_configuration' => 'Error during configuration',
+    'configuration_install' => 'Fill the form',
+    'required_fields' => 'Fields with <span style="font-weight: bold;color: red;">*</span> are required',
+    'configure_ok' => '<p>Configuration OK. You can : <a href="../">test subscribe form</a> 
+            and <a href="http://helloscan.mobi/helloevent.html">configure HelloScan</a> or discover backoffice for 
+            <a href="../admin/">subscribers database</a>.</p>
+            <p>You can configure fields on app/config/config.inc.php file</p>',
 );
 ?>

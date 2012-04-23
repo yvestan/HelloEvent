@@ -14,7 +14,12 @@
 */
 
 // configuration
-include dirname(__FILE__).'/config.inc.php';
+if(!file_exists(dirname(__FILE__).'/config/config.inc.php')) {
+    echo 'Impossible de trouver le fichier de configuration / Unable to find configuration file';
+    exit;
+} else {
+    include dirname(__FILE__).'/config/config.inc.php';
+}
 
 // où est l'app
 if(!defined('HE_APP_PATH')) {
@@ -41,7 +46,7 @@ if(empty($_GET['authkey']) || HE_AUTHKEY!=$_GET['authkey']) {
 
 // URL de l'app
 if(!defined('HE_APP_URL') && !empty($_SERVER['REQUEST_URI']) && !empty($_SERVER['HTTP_HOST'])) {
-    define('HE_APP_URL', 'http://'.str_replace('scan/autoconf.php', '', $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']));
+    define('HE_APP_URL', 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 }
 
 header('Content-Type: application/xml'); 
@@ -50,7 +55,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>';
 <helloscan>
     <button>
         <label value="<?php echo Grafomatic::__('btn_scan'); ?>"></label>
-        <url value="<?php echo HE_APP_URL; ?>scan/?authkey=<?php echo HE_AUTHKEY; ?>&amp;action=get&amp;code=&lt;id&gt;"></url>
+        <url value="<?php echo HE_APP_URL; ?>&amp;action=get&amp;code=&lt;id&gt;"></url>
         <action value="true"></action>
         <color value="buttonBlue"></color>
         <displaycode value="false"></displaycode>
@@ -61,9 +66,20 @@ echo '<?xml version="1.0" encoding="utf-8"?>';
     </button>
     <button>
         <label value="<?php echo Grafomatic::__('btn_valid'); ?>"></label>
-        <url value="<?php echo HE_APP_URL; ?>scan/?authkey=<?php echo HE_AUTHKEY; ?>&amp;action=active&amp;code=&lt;id&gt;"></url>
+        <url value="<?php echo HE_APP_URL; ?>&amp;action=active&amp;code=&lt;id&gt;"></url>
         <action value="false"></action>
         <color value="buttonGreen"></color>
+        <displaycode value="false"></displaycode>
+        <displayresult value="true"></displayresult>
+        <displaydata value="false"></displaydata>
+        <displayurl value="false"></displayurl>
+        <displayraw value="false"></displayraw>
+    </button>
+    <button>
+        <label value="<?php echo Grafomatic::__('btn_invalid'); ?>"></label>
+        <url value="<?php echo HE_APP_URL; ?>&amp;action=inactive&amp;code=&lt;id&gt;"></url>
+        <action value="false"></action>
+        <color value="buttonRed"></color>
         <displaycode value="false"></displaycode>
         <displayresult value="true"></displayresult>
         <displaydata value="false"></displaydata>
