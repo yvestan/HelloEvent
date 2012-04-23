@@ -156,7 +156,7 @@ class Grafomatic {
 
         if (!$sth) {
             echo "\nPDO::errorInfo():\n";
-            print_r($dbh->errorInfo());
+            print_r($this->db->errorInfo());
             exit;
         }
 
@@ -164,9 +164,7 @@ class Grafomatic {
         $result = $sth->fetch(PDO::FETCH_ASSOC);
 
         if (!$result) {
-            echo "\nPDO::errorInfo():\n";
-            print_r($dbh->errorInfo());
-            exit;
+            return null;
         } else {
             $this->r = $result;
         }
@@ -640,7 +638,7 @@ class Grafomatic {
 
         if (!$sth) {
             echo "\nPDO::errorInfo():\n";
-            print_r($dbh->errorInfo());
+            print_r($this->db->errorInfo());
             exit;
         }
 
@@ -649,7 +647,7 @@ class Grafomatic {
 
         if (!$result) {
             echo "\nPDO::errorInfo():\n";
-            print_r($dbh->errorInfo());
+            print_r($this->db->errorInfo());
             exit;
         } else {
             $r = $result[0];
