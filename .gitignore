@@ -1,2 +1,4 @@
 app/config/config.inc.php
+app/config/transport.inc.php
+pdfs/*.pdf
 app/libs/phpqrcode/cache/

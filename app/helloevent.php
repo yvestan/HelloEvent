@@ -255,8 +255,8 @@ if ($form->validate()) {
     require HE_APP_PATH.'/libs/Swiftmailer/swift_required.php';
 
     // le transport proposé
-    if(file_exists(HE_APP_PATH.'/transport.inc.php')) {
-        include HE_APP_PATH.'/transport.inc.php';
+    if(file_exists(HE_APP_PATH.'/config/transport.inc.php')) {
+        include HE_APP_PATH.'/config/transport.inc.php';
     }
 
     // si aucun transport
