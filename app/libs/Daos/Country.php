@@ -7,7 +7,7 @@
  *
  * PHP version 5
  *
- * LICENSE: Ce programme est un logiciel libre distribué sous licence GNU/GPL
+ * LICENSE: Ce programme est un logiciel libre distribuÃ© sous licence GNU/GPL
  *
  * @author     Yves Tannier <yves@grafactory.net>
  * @copyright  2006 Yves Tannier
@@ -22,8 +22,8 @@ class Country extends Grafomatic {
 
     /** Constructeur
      *
-     * Le constructeur de classe hérite des valeurs du constructeur
-     * de la classe mère 
+     * Le constructeur de classe hÃ©rite des valeurs du constructeur
+     * de la classe mÃ¨re 
      *
      * @see Grafomatic
      * @access public
@@ -54,7 +54,7 @@ class Country extends Grafomatic {
 
     /** Liste des pays
      *
-     * récupère la liste des pays
+     * rÃ©cupÃ¨re la liste des pays
      *
      * @access public
      * @param string $lang La langue
@@ -63,7 +63,7 @@ class Country extends Grafomatic {
      public function getCountries($lang='french')
      {
 
-        $langs : array(
+        $langs = array(
             'french' => 'FR',
             'english' => 'EN',
         );

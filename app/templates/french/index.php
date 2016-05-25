@@ -33,8 +33,14 @@
 
     <?php if(!empty($success_form)): ?>
         <div id="success">
-            Votre inscription  bien été prise en compte. Vous allez recevoir dans quelques minutes votre badge
-                d'accès au format PDF <strong>à imprimer impérativement</strong>.
+            <?php if(empty($simpleform)): ?>
+                Votre inscription  bien été prise en compte. Vous allez recevoir dans quelques minutes votre badge
+                    d'accès au format PDF <strong>à imprimer impérativement</strong>.
+            <?php else: ?>
+                Inscription prise en compte !
+                    <br /><br /><a href="./pdfs/<?php echo $name_pdf_file; ?>">&rarr; Télécharger le badge</a>
+                    <br /><br /><a href="./?admin=simpleform">&rarr; Inscrire un nouvelle personne</a>
+            <?php endif; ?>
         </div>
     <?php endif; ?>
 
@@ -47,7 +53,7 @@
 
     <?php endif; ?>
 
-    <div class="footer"><a href="http://helloscan.mobi">HelloEvent by HelloScan</a> &amp; <a href="http://www.grafactory.net">grafactory.net</a></div>
+    <div class="footer"><a href="http://helloscan.mobi">HelloEvent by HelloScan</a> &amp; <a href="http://www.tanlab.fr">tanLab<small>.fr</small></a></div>
 
     </div>
     </body>

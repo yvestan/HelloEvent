@@ -16,6 +16,11 @@
 // copy address / copie de l'inscription (laissez vide pour ne pas la recevoir)
 define('HE_MAIL_ADMIN', 'me@example.tld');
 
+// admin list / liste des admins
+$GLOBALS['HE_LIST_MAIL_ADMIN'] = array(
+    //'other@example.tld' => 'John Doe',
+);
+
 // mail from address / provenance du message
 define('HE_MAIL_FROM', 'me@example.tld');
 
@@ -46,6 +51,10 @@ define('HE_AUTHKEY', 'WARNING_CHANGE_THIS');
     'controls' => array(
         'required' => true
     ),
+    // optionnal : afficher ou non dans le backoffice
+    'backoffice' => true,
+    // optionnal : afficher ou non sur l'application HelloScan
+    'scanvisible' => true,
     // optionnal : value transform before insert on DB / optionnel : modifier les valeurs avant l'insertion en base
     // see possible values / voir les valeur possibles sur http://php.net/manual/fr/function.mb-convert-case.php
     // MB_CASE_UPPER, MB_CASE_LOWER, ou MB_CASE_TITLE 
@@ -68,12 +77,14 @@ $GLOBALS['he_fields'] = array(
         'transforms' => array(
             MB_CASE_UPPER
         ),
+        'scanvisible' => true,
      ),
     'firstname' => array(
         'active' => true,
         'controls' => array(
             'required' => true
         ),
+        'scanvisible' => true,
      ),
     'email' => array(
         'active' => true,
@@ -109,6 +120,13 @@ $GLOBALS['he_fields'] = array(
     'shipping_city' => array('active' => false),
     'shipping_country' => array('active' => false),
     'blog' => array('active' => false),
+    'http_referer' => array('backoffice' => false, 'special' => true), // referer
+    'partner' => array('backoffice' => true, 'special' => true), // partner
+    'badge' => array('backoffice' => true, 'special' => true), // badge
+    'date_insert' => array('backoffice' => true, 'active' => false),
+    'date_update' => array('backoffice' => true, 'active' => false),
+    'active' => array('backoffice' => true, 'active' => false),
+    'token_subscribe' => array('backoffice' => true, 'active' => false),
 );
 
 // locale / langue
@@ -120,6 +138,12 @@ define('HE_RESTRICT_EMAIL', false);
 // logo and alternative text / logo et texte alternatif
 //define('HE_LOGO_HEAD', 'public/helloevent.png');
 //define('HE_ALT_LOGO_HEAD', 'HelloEvent by HelloScan');
+
+// filename prefix / prefix fichier
+define('HE_PREFIX_FILENAME', 'inscription_');
+
+// web path / chemin web
+//define('HE_WEB_PATH', '/');
 
 // optionnal / optionel
 

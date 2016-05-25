@@ -20,7 +20,7 @@ body {
         margin-right: auto;
         width: 86mm; /* width badge size */
         height: 101.60mm; /* height badge size */
-        background: top left transparent url(./public/badge_background.jpg) no-repeat; /* backgound image 86x101;60 mm */
+        background: top left transparent url({__(web_path)__}public/badges/badge-{__(badge)__}.png) no-repeat; /* backgound image 86x101;60 mm */
     }
     #content_badge {
         padding: 3mm;
@@ -61,7 +61,7 @@ body {
         <div id="content_badge">
             <h2>{__(firstname)__} {__(lastname)__}</h2>
             <div id="qrcode">
-                <img src="./?get_qrcode={__(token_subscribe)__}" />
+                <img src="{__(web_path)__}?get_qrcode={__(token_subscribe)__}" />
             </div>
         </div>
     </div>

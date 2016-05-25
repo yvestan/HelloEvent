@@ -175,7 +175,6 @@ class HelloEvent_Check {
        
     // subscriber fields rturn format json
     private $return_fields = array(
-        'id_subscribe',
         'date_insert',
         'date_update',
         'active',
@@ -199,7 +198,7 @@ class HelloEvent_Check {
 
         // return active fields
         foreach($GLOBALS['he_fields'] as $f=>$v) {
-            if(!empty($v['active']) && $v['active']===true) {
+            if(!empty($v['active']) && $v['active']===true && !empty($v['scanvisible']) && $v['scanvisible']===true) {
                 $this->return_fields[] = $f;
             }
         }

@@ -46,7 +46,7 @@ if(empty($_GET['authkey']) || HE_AUTHKEY!=$_GET['authkey']) {
 
 // URL de l'app
 if(!defined('HE_APP_URL') && !empty($_SERVER['REQUEST_URI']) && !empty($_SERVER['HTTP_HOST'])) {
-    define('HE_APP_URL', 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+    define('HE_APP_URL', str_replace('autoconf.php','','http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']));
 }
 
 header('Content-Type: application/xml'); 

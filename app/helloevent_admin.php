@@ -41,6 +41,11 @@ if(!defined('HE_APP_NAME')) {
     define('HE_APP_NAME', 'HelloEvent');
 }
 
+// public path
+if(!defined('HE_WEB_PATH')) {
+    define('HE_WEB_PATH', './');
+}
+
 // language
 if(file_exists(HE_APP_PATH.'/languages/'.HE_LOCALE.'.php')) {
     require HE_APP_PATH.'/languages/'.HE_LOCALE.'.php';
@@ -73,9 +78,27 @@ function adminer_object() {
             }
         }
         function fieldName($field, $order = 0) {
-            if(!empty($GLOBALS['translate_config'][$field['field']])) {
-                return h($GLOBALS['translate_config'][$field['field']]);
+            if(!empty($GLOBALS['he_fields'][$field['field']]) && 
+                ($GLOBALS['he_fields'][$field['field']]['active']==true || !empty($GLOBALS['he_fields'][$field['field']]['backoffice']))) { 
+                if(!empty($GLOBALS['translate_config'][$field['field']])) {
+                    return h($GLOBALS['translate_config'][$field['field']]);
+                }
             }
+        }
+        function selectVal($val, $link, $field, $original) {
+            if($field['field']=='token_subscribe') {
+                return '<a href="./badge.php?token_subscribe='.$val.'">Billet '.$val.'</a>';
+            }
+            $return = ($val === null ? "<i>non précisé</i>" : (preg_match("~char|binary~", $field["type"]) && !preg_match("~var~", $field["type"]) ? "<code>$val</code>" : $val));
+            if (preg_match('~blob|bytea|raw|file~', $field["type"]) && !is_utf8($val)) {
+                $return = lang('%d byte(s)', strlen($original));
+            }
+            return ($link ? "<a href='" . h($link) . "'" . (is_url($link) ? " rel='noreferrer'" : "") . ">$return</a>" : $return);
+        }
+        function selectLinks($tableStatus, $set = "") {
+            echo '<p class="links">';
+            echo " <a href='../?admin=simpleform' target='_blank'>Inscrire une personne</a>";
+            echo "\n";
         }
     }
     return new AdminerSoftware;
